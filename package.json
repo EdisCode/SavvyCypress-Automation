@@ -4,13 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "testopen": "npx cypress open",
+    "testrun": "npx cypress run",
+    "headTest": "npm run testrun --headed",
+    "chromeTest": "npm run testrun --browser chrome",
+    "GreenKartTest": "npm run test --spec \"cypress/integration/GreenKart/*\""
   },
   "author": "Edikan Ekanem",
   "license": "ISC",
   "devDependencies": {
     "cypress": "^13.3.0",
     "cypress-iframe": "^1.0.1",
-    "jasmine": "^5.1.0"
+    "jasmine": "^5.1.0",
+    "mocha": "^10.2.0",
+    "mochawesome": "^7.1.3"
   }
 }
