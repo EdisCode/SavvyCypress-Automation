@@ -6,9 +6,11 @@
   "scripts": {
     "testopen": "npx cypress open",
     "testrun": "npx cypress run",
-    "headTest": "npm run testrun --headed",
-    "chromeTest": "npm run testrun --browser chrome",
-    "GreenKartTest": "npm run test --spec \"cypress/integration/GreenKart/*\""
+    "headTest": "npm run testrun -- --headed",
+    "chromeTest": "npm run testrun -- --browser chrome --headed",
+    "GreenKartTest": "npm run testrun -- --spec \"cypress/integration/GreenKart/*\"",
+    "oneTest": "npm run chromeTest -- --spec \"cypress/integration/Test8Framework.js\"",
+    "cucumberTest": "npm run testrun -- --spec cypress/integration/BDD/ecommerce.feature --headed --browser chrome"
   },
   "author": "Edikan Ekanem",
   "license": "ISC",
@@ -17,6 +19,17 @@
     "cypress-iframe": "^1.0.1",
     "jasmine": "^5.1.0",
     "mocha": "^10.2.0",
-    "mochawesome": "^7.1.3"
+    "mochawesome": "^7.1.3",
+    "multiple-cucumber-html-reporter": "^3.5.0"
+  },
+  "cypress-cucumber-preprocessor": {
+    "json": {
+      "enabled": true,
+      "output": "cypress/cucumberReports/results.json"
+    }
+  },
+  "dependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^18.0.6",
+    "@cypress/browserify-preprocessor": "^3.0.2"
   }
 }
